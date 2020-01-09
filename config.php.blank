@@ -1,0 +1,19 @@
+<?php
+
+//! токен, например sdfplsdDsSFDFG2525F
+define("TOKEN", "");
+
+//! http или https
+define("PROTOCOL", "");
+
+//! адрес сайта без протокола
+define("SITE", "");
+
+//! логин (email) админа
+define("LOGIN", "");
+
+//! пароль, кэп :)
+define("PASSWORD", "");
+
+//! юзерагент, желательно поменять
+define("USERAGENT", "Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0 Waterfox/56.2.13");
