@@ -17,10 +17,13 @@ ob_start();
 
 $fTime = microtime(true);
 
-include("common.php");
+include("common.inc.php");
 
 if(strcasecmp("post", $_SERVER["REQUEST_METHOD"]) != 0)
-	return http_response_code(400);
+{
+	http_response_code(400);
+	exit();
+}
 
 //название модуля (это же название директории, куда будут сохраняться отладочные данные)
 define("DEBUG_MODULE_PATH", "update_stocks");

@@ -18,7 +18,7 @@ $iStatus = (array_key_exists("status", $_GET) ? $_GET["status"] : 0);
 
 $fTime = microtime(true);
 
-include("common.php");
+include("common.inc.php");
 
 //название модуля (это же название директории, куда будут сохраняться отладочные данные)
 define("DEBUG_MODULE_PATH", "get_contractors");

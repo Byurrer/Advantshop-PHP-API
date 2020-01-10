@@ -423,7 +423,7 @@ class CAdvantShop
 
 	/*! возвращает данные контрагента по id заказа
 		@param idOrder идентификатор заказа
-		@return html
+		@return тоже самое что #ParseOrderCustomer
 	*/
 	public function getСontractor($idOrder)
 	{
@@ -513,7 +513,7 @@ class CAdvantShop
 
 	//************************************************************************
 
-	/*! обнолвнеие оффера продукта
+	/*! обновление оффера продукта
 		@param idProduct идентификатор продукта
 		@param sJSON json объект с данными оффера (можно посмотреть в методе #getOffers)
 		@note происходит в 2 этапа: 
@@ -595,7 +595,27 @@ function ParseOrderCustomerValue($sId, $sText)
 	return $aMatches[1];
 }
 
-//! парсинг страницы с данными контрагента
+/*! парсинг страницы с данными контрагента
+	@param sText html текст страницы с данными
+	@return ассоциативный массив:
+		last_name - фамилия
+		first_name - имя
+		patronymic - отчество
+		email - адрес электронной почты
+		phone -  телефон
+		country - страна
+		region - регион
+		city - город
+		street - улица
+		zip - индекс
+		passport - серия и номер паспорта
+		terminal - терминал
+		house - дом
+		structure - строение
+		apartment - квартира
+		entrance - подъезд
+		floor - этаж
+*/
 function ParseOrderCustomer($sText)
 {
 	$aFields = [

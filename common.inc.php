@@ -5,11 +5,14 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-include("config.php");
+include("config.inc.php");
 
 //проверка токена
-if($_GET["token"] != TOKEN)
-	return http_response_code(400);
+if(!array_key_exists("token", $_GET) || $_GET["token"] != TOKEN)
+{
+	http_response_code(400);
+	exit();
+}
 
 //создание функции array_key_first
 if (!function_exists('array_key_first'))
@@ -22,7 +25,7 @@ if (!function_exists('array_key_first'))
 	}
 }
 
-include("advantshop.php");
+include("advantshop.class.php");
 
 $sCookie = "";
 //загрузка куки
