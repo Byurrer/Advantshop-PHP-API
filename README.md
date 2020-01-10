@@ -19,25 +19,27 @@ API представлено классом, реализующим низкоу
 
 ## Использование
 Самостоятельное использование класса API:
-  include("advantshop.php");
+	
+	include("advantshop.php");
 
-  $sCookie = "";
-  //загрузка куки
-  if(file_exists("cookie.txt"))
-	  $sCookie = file_get_contents("cookie.txt");
+	$sCookie = "";
+	//загрузка куки
+	if(file_exists("cookie.txt"))
+		$sCookie = file_get_contents("cookie.txt");
 
-  //авторизация в интернет-магазине
-  $oShop = new CAdvantShop();
-  $iResult = $oShop->auth(PROTOCOL, SITE, LOGIN, PASSWORD, $sCookie, USERAGENT);
+	//авторизация в интернет-магазине
+	$oShop = new CAdvantShop();
+	$iResult = $oShop->auth(PROTOCOL, SITE, LOGIN, PASSWORD, $sCookie, USERAGENT);
 
-  //сохраняем куки
-  file_put_contents("cookie.txt", $oShop->getCookie());
+	//сохраняем куки
+	file_put_contents("cookie.txt", $oShop->getCookie());
   
 Файлы config.inc.php и common.inc.php облегчают использование API:
 * config.inc.php содержит данные для авторизации
 * common.inc.php содержит подключение всего необходимого, создание объекта класса $oShop, загрузку и создание файла кук
 Для упрощенного использования можно просто подключить 
-  include("common.inc.php");
+	
+	include("common.inc.php");
 
 ## Лицензия
 **MIT**
