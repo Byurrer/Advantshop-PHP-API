@@ -47,5 +47,3 @@ API представлено классом, реализующим низкоу
 
 ## Автор
 Buturlin Vitaliy (Byurrer), email: byurrer@mail.ru
-
-# Advantshop-PHP-API
